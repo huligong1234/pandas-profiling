@@ -1,4 +1,5 @@
 from pandas_profiling.config import config
+from pandas_profiling.i18n import i18n
 from pandas_profiling.report.formatters import help
 from pandas_profiling.report.presentation.core import (
     Container,
@@ -49,31 +50,31 @@ def render_categorical_length(summary, varid, image_format):
     length_table = Table(
         [
             {
-                "name": "Max length",
+                "name": i18n["variables"]["categorical"]["max_length"],
                 "value": summary["max_length"],
                 "fmt": "fmt_numeric",
                 "alert": False,
             },
             {
-                "name": "Median length",
+                "name": i18n["variables"]["categorical"]["median_length"],
                 "value": summary["median_length"],
                 "fmt": "fmt_numeric",
                 "alert": False,
             },
             {
-                "name": "Mean length",
+                "name": i18n["variables"]["categorical"]["mean_length"],
                 "value": summary["mean_length"],
                 "fmt": "fmt_numeric",
                 "alert": False,
             },
             {
-                "name": "Min length",
+                "name": i18n["variables"]["categorical"]["min_length"],
                 "value": summary["min_length"],
                 "fmt": "fmt_numeric",
                 "alert": False,
             },
         ],
-        name="Length",
+        name=i18n["variables"]["categorical"]["length"],
         anchor_id=f"{varid}lengthstats",
     )
 
@@ -313,31 +314,31 @@ def render_categorical(summary):
     table = Table(
         [
             {
-                "name": "Distinct",
+                "name": i18n["variables"]["categorical"]["distinct"],
                 "value": summary["n_distinct"],
                 "fmt": "fmt",
                 "alert": "n_distinct" in summary["warn_fields"],
             },
             {
-                "name": "Distinct (%)",
+                "name": i18n["variables"]["categorical"]["distinct_ratio"],
                 "value": summary["p_distinct"],
                 "fmt": "fmt_percent",
                 "alert": "p_distinct" in summary["warn_fields"],
             },
             {
-                "name": "Missing",
+                "name": i18n["variables"]["categorical"]["missing"],
                 "value": summary["n_missing"],
                 "fmt": "fmt",
                 "alert": "n_missing" in summary["warn_fields"],
             },
             {
-                "name": "Missing (%)",
+                "name": i18n["variables"]["categorical"]["missing_ratio"],
                 "value": summary["p_missing"],
                 "fmt": "fmt_percent",
                 "alert": "p_missing" in summary["warn_fields"],
             },
             {
-                "name": "Memory size",
+                "name": i18n["variables"]["categorical"]["memory_size"],
                 "value": summary["memory_size"],
                 "fmt": "fmt_bytesize",
                 "alert": False,

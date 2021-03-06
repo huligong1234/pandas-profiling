@@ -1,0 +1,46 @@
+overview:
+  overview: "概要"
+  variables: "变量"
+  number_of_variables: "变量个数"
+  number_of_observations: "观察次数"
+  missing_cells: "缺失单元"
+  missing_cells_ratio: "缺失单元 (%)"
+  duplicate_rows: "重复行"
+  duplicate_rows_ratio: "重复行 (%)"
+  total_size_in_memory: "总大小"
+  average_record_size_in_memory: "平均大小"
+  dataset_statistics: "数据集统计"
+  variable_types: "变量类别"
+
+report:
+  overview: "概要"
+  variables: "变量"
+  interactions: "交互"
+  missing_values: "缺失值"
+  sample: "样本"
+  duplicate_rows: "重复行"
+  toggle_details: "详情"
+
+correlations:
+  correlations: "相关性"
+  toggle_correlation_descriptions: "相关性描述"
+
+variables:
+  categorical:
+    length: "长度"
+    max_length: "最大值"
+    median_length: "中位数"
+    mean_length: "平均值"
+    min_length: "最小值"
+    distinct: "唯一值"
+    distinct_ratio: "唯一值 (%)"
+    missing: "缺失值"
+    missing_ratio: "缺失值 (%)"
+    memory_size: "大小"
+
+  count:
+    mean: "平均值"
+    minimum: "最小值"
+    maximum: "最大值"
+    zeros: "零值数"
+    memory_size: "大小"

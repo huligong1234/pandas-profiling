@@ -190,3 +190,6 @@ html:
       logo: ""
       primary_color: "#337ab7"
       full_width: False
+
+# I18N for the report, en/zh-CN
+i18n: "zh-CN"

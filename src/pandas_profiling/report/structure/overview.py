@@ -2,6 +2,7 @@ from typing import Optional
 from urllib.parse import quote
 
 from pandas_profiling.config import config
+from pandas_profiling.i18n import i18n
 from pandas_profiling.model.messages import MessageType
 from pandas_profiling.report.presentation.core import Container, Table, Warnings
 
@@ -10,47 +11,47 @@ def get_dataset_overview(summary):
     dataset_info = Table(
         [
             {
-                "name": "Number of variables",
+                "name": i18n["overview"]["number_of_variables"],
                 "value": summary["table"]["n_var"],
                 "fmt": "fmt_number",
             },
             {
-                "name": "Number of observations",
+                "name": i18n["overview"]["number_of_observations"],
                 "value": summary["table"]["n"],
                 "fmt": "fmt_number",
             },
             {
-                "name": "Missing cells",
+                "name": i18n["overview"]["missing_cells"],
                 "value": summary["table"]["n_cells_missing"],
                 "fmt": "fmt_number",
             },
             {
-                "name": "Missing cells (%)",
+                "name": i18n["overview"]["missing_cells_ratio"],
                 "value": summary["table"]["p_cells_missing"],
                 "fmt": "fmt_percent",
             },
             {
-                "name": "Duplicate rows",
+                "name": i18n["overview"]["duplicate_rows"],
                 "value": summary["table"]["n_duplicates"],
                 "fmt": "fmt_number",
             },
             {
-                "name": "Duplicate rows (%)",
+                "name": i18n["overview"]["duplicate_rows_ratio"],
                 "value": summary["table"]["p_duplicates"],
                 "fmt": "fmt_percent",
             },
             {
-                "name": "Total size in memory",
+                "name": i18n["overview"]["total_size_in_memory"],
                 "value": summary["table"]["memory_size"],
                 "fmt": "fmt_bytesize",
             },
             {
-                "name": "Average record size in memory",
+                "name": i18n["overview"]["average_record_size_in_memory"],
                 "value": summary["table"]["record_size"],
                 "fmt": "fmt_bytesize",
             },
         ],
-        name="Dataset statistics",
+        name=i18n["overview"]["dataset_statistics"],
     )
 
     dataset_types = Table(
@@ -58,7 +59,7 @@ def get_dataset_overview(summary):
             {"name": str(type_name), "value": count, "fmt": "fmt_numeric"}
             for type_name, count in summary["table"]["types"].items()
         ],
-        name="Variable types",
+        name=i18n["overview"]["variable_types"],
     )
 
     return Container(
@@ -170,7 +171,7 @@ def get_dataset_column_definitions(definitions: dict):
 
     return Container(
         variable_descriptions,
-        name="Variables",
+        name=i18n["overview"]["variables"],
         anchor_id="variable_descriptions",
         sequence_type="grid",
     )

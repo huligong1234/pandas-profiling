@@ -1,6 +1,7 @@
 from typing import List, Optional
 
 from pandas_profiling.config import config
+from pandas_profiling.i18n import i18n
 from pandas_profiling.report.presentation.core import (
     HTML,
     Collapse,
@@ -100,13 +101,13 @@ def get_correlation_items(summary) -> Optional[Renderable]:
 
     if len(items) > 0:
         btn = ToggleButton(
-            "Toggle correlation descriptions",
+            i18n["correlations"]["toggle_correlation_descriptions"],
             anchor_id="toggle-correlation-description",
             name="Toggle correlation descriptions",
         )
 
         return Collapse(
-            name="Correlations", anchor_id="correlations", button=btn, item=corr
+            name=i18n["correlations"]["correlations"], anchor_id="correlations", button=btn, item=corr
         )
     else:
         return None

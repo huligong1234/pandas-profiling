@@ -1,0 +1,54 @@
+overview:
+  overview: "Overview"
+  variables: "Variables"
+  number_of_variables: "Number of variables"
+  number_of_observations: "Number of observations"
+  missing_cells: "Missing cells"
+  missing_cells_ratio: "Missing cells (%)"
+  duplicate_rows: "Duplicate rows"
+  duplicate_rows_ratio: "Duplicate rows (%)"
+  total_size_in_memory: "Total size in memory"
+  average_record_size_in_memory: "Average record size in memory"
+  dataset_statistics: "Dataset statistics"
+  variable_types: "Variable types"
+
+report:
+  overview: "Overview"
+  variables: "Variables"
+  interactions: "Interactions"
+  missing_values: "Missing values"
+  sample: "Sample"
+  duplicate_rows: "Duplicate rows"
+  toggle_details: "Toggle details"
+
+correlations:
+  correlations: "Correlations"
+  toggle_correlation_descriptions: "Toggle correlation descriptions"
+  pearson_description: ""
+
+variables:
+  categorical:
+    length: "Length"
+    max_length: "Max length"
+    median_length: "Median length"
+    mean_length: "Mean length"
+    min_length: "Min length"
+
+    total_characters: "Total characters"
+    distinct_characters: "Distinct characters"
+    distinct_categories: "Distinct categories"
+    distinct_scripts: "Distinct scripts"
+    distinct_blocks: "Distinct blocks"
+
+    distinct: "Distinct"
+    distinct_ratio: "Distinct (%)"
+    missing: "Missing"
+    missing_ratio: "Missing (%)"
+    memory_size: "Memory size"
+
+  count:
+    mean: "Mean"
+    minimum: "Minimum"
+    maximum: "Maximum"
+    zeros: "Zeros"
+    memory_size: "Memory size"

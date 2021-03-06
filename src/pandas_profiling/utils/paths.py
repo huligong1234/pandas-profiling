@@ -52,3 +52,12 @@ def get_html_template_path() -> Path:
         / "html"
         / "templates"
     )
+
+
+def get_i18n(locale="en") -> Path:
+    """Returns the path to the default i18n file.
+
+    Returns:
+        The path to the default i18n file.
+    """
+    return Path(__file__).parent.parent / "i18n_{}.yaml".format(locale)

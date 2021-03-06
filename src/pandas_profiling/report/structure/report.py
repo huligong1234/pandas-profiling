@@ -5,6 +5,7 @@ import pandas as pd
 from tqdm.auto import tqdm
 
 from pandas_profiling.config import config
+from pandas_profiling.i18n import i18n
 from pandas_profiling.model.handler import get_render_map
 from pandas_profiling.model.messages import MessageType
 from pandas_profiling.report.presentation.core import (
@@ -109,7 +110,7 @@ def render_variables_section(dataframe_summary: dict) -> list:
 
         bottom = None
         if "bottom" in template_variables and template_variables["bottom"] is not None:
-            btn = ToggleButton("Toggle details", anchor_id=template_variables["varid"])
+            btn = ToggleButton(i18n["report"]["toggle_details"], anchor_id=template_variables["varid"])
             bottom = Collapse(btn, template_variables["bottom"])
 
         var = Variable(
@@ -240,13 +241,13 @@ def get_report_structure(summary: dict) -> Renderable:
             Container(
                 get_dataset_items(summary, warnings),
                 sequence_type="tabs",
-                name="Overview",
+                name=i18n["report"]["overview"],
                 anchor_id="overview",
             ),
             Container(
                 render_variables_section(summary),
                 sequence_type="accordion",
-                name="Variables",
+                name=i18n["report"]["variables"],
                 anchor_id="variables",
             ),
         ]
@@ -257,7 +258,7 @@ def get_report_structure(summary: dict) -> Renderable:
                 Container(
                     scatter_items,
                     sequence_type="tabs" if len(scatter_items) <= 10 else "select",
-                    name="Interactions",
+                    name=i18n["report"]["interactions"],
                     anchor_id="interactions",
                 ),
             )
@@ -272,7 +273,7 @@ def get_report_structure(summary: dict) -> Renderable:
                 Container(
                     missing_items,
                     sequence_type="tabs",
-                    name="Missing values",
+                    name=i18n["report"]["missing_values"],
                     anchor_id="missing",
                 )
             )
@@ -283,7 +284,7 @@ def get_report_structure(summary: dict) -> Renderable:
                 Container(
                     items=sample_items,
                     sequence_type="list",
-                    name="Sample",
+                    name=i18n["report"]["sample"],
                     anchor_id="sample",
                 )
             )
@@ -294,7 +295,7 @@ def get_report_structure(summary: dict) -> Renderable:
                 Container(
                     items=duplicate_items,
                     sequence_type="list",
-                    name="Duplicate rows",
+                    name=i18n["report"]["duplicate_rows"],
                     anchor_id="duplicate",
                 )
             )
